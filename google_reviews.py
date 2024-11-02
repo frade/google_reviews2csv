@@ -12,7 +12,7 @@ def initialize_driver():
     """Initialize Chrome driver with necessary options"""
     options = webdriver.ChromeOptions()
     # Comment out headless mode for debugging
-    # options.add_argument('--headless=new')
+    options.add_argument('--headless=new')
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-gpu')
