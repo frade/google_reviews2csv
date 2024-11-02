@@ -100,7 +100,4 @@ If you encounter any issues:
 4. Check your internet connection
 
 ## 📧 Contact
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/google-reviews-scraper](https://github.com/yourusername/google-reviews-scraper)
+Telegram: @Manu4ar 
