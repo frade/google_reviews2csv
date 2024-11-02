@@ -212,8 +212,21 @@ def get_all_reviews(place_name):
                 author = review.find_element(By.CSS_SELECTOR, 'div.d4r55').text
                 rating = len(review.find_elements(By.CSS_SELECTOR, 'span[aria-label*="stars"]'))
                 time_element = review.find_element(By.CSS_SELECTOR, 'span.rsqaWe').text
-                text = review.find_element(By.CSS_SELECTOR, 'span.wiI7pd').text
-
+                
+                # Try to find and click "More" button if it exists
+                try:
+                    more_button = review.find_element(By.CSS_SELECTOR, 'button.w8nwRe.kyuRq')
+                    driver.execute_script("arguments[0].click();", more_button)
+                    time.sleep(0.5)  # Short wait for text to expand
+                except:
+                    pass  # No "More" button found, review is already fully expanded
+                
+                # Get the full text after potentially expanding it
+                try:
+                    text = review.find_element(By.CSS_SELECTOR, 'span.wiI7pd').text
+                except:
+                    text = "No comment provided"  # Default text for reviews without comments
+                
                 reviews.append({
                     'author_name': author,
                     'rating': rating,
